@@ -1,8 +1,51 @@
-# React + Vite
+# TradeHive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TradeHive** is a platform for managing your trading data and analyzing market trends. It provides an easy-to-use interface for tracking trades, viewing real-time analytics, and organizing market information.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Manage trades and transactions
+- Track market trends and performance
+- Customizable trading dashboard
+- Real-time data updates
+- Email notifications for key trade events
+
+## Prerequisites
+
+- Node.js >= 16.x
+- npm or yarn
+- MongoDB (for local development)
+- SendGrid (for email notifications)
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/tradehive.git
+cd tradehive 
+```
+
+### 2. Install dependencies
+
+```bash
+If you are using npm:
+npm install
+
+If you are using yarn:
+yarn install
+```
+
+### 3. Run the application
+
+```bash
+To start the development server, run:
+
+If you are using npm:
+npm start
+
+If you are using yarn:
+yarn start
+The app will be available at http://localhost:5173.
+```
+
