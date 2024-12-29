@@ -1,4 +1,4 @@
-# TradeHive
+# TradeHive  🚀📊💹
 
 **TradeHive** is a platform for managing your trading data and analyzing market trends. It provides an easy-to-use interface for tracking trades, viewing real-time analytics, and organizing market information.
 
