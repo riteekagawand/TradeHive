@@ -12,7 +12,7 @@
 
 ## Hero Section
 
-![Hero Section](./src/assets/hero.png)
+![Hero Section](./assets/Hero.png)
 
 ## Prerequisites
 
