@@ -12,7 +12,7 @@
 
 ## Hero Section
 
-![Hero Section](./assets/Hero.png)
+![Hero Section]<img src='./Frontend/src/assets/Images/Hero.png' />
 
 ## Prerequisites
 
