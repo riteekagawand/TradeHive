@@ -16,6 +16,13 @@
 
 <img src='./Frontend/src/assets/Images/Hero.png' />
 
+
+## Categories Section
+
+
+
+<img src='./Frontend/src/assets/Images/category.png' />
+
 ## Prerequisites
 
 - Node.js >= 16.x
