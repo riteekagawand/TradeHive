@@ -12,6 +12,8 @@
 
 ## Hero Section
 
+
+
 <img src='./Frontend/src/assets/Images/Hero.png' />
 
 ## Prerequisites
