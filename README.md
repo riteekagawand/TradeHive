@@ -10,6 +10,10 @@
 - Real-time data updates
 - Email notifications for key trade events
 
+## Hero Section
+
+![Hero Section](./src/assets/hero.png)
+
 ## Prerequisites
 
 - Node.js >= 16.x
