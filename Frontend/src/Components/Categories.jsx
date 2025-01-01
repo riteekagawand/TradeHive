@@ -11,17 +11,19 @@ const Categories = () => {
   const [visibleOffers, setVisibleOffers] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the backend
+    // Fetch data from the backend every time the page reloads
     const fetchOffers = async () => {
       try {
         const response = await axios.get("http://localhost:5000/api/specialoffers");
-        setSpecialOffers(response.data);
+        setSpecialOffers(response.data); // Set state with fetched data
+        localStorage.setItem("specialOffers", JSON.stringify(response.data)); // Optionally store it in localStorage
       } catch (error) {
         console.error("Error fetching special offers:", error);
       }
     };
-    fetchOffers();
-  }, []);
+
+    fetchOffers(); // Fetch offers from the backend on component mount
+  }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   useEffect(() => {
     if (specialOffers.length > 0) {
@@ -37,7 +39,7 @@ const Categories = () => {
       };
 
       updateVisibleOffers(); // Initial call
-      const intervalId = setInterval(updateVisibleOffers, 60000); // Update every minute
+      const intervalId = setInterval(updateVisibleOffers, 30000); // Update every minute
 
       return () => clearInterval(intervalId); // Cleanup interval on component unmount
     }
@@ -53,22 +55,21 @@ const Categories = () => {
 
         <div className="container mx-auto mt-10">
           <div className="flex flex-col lg:flex-row justify-between gap-[10%]">
-          <div className="lg:w-[25%] w-full bg-white mt-10">
-            <div className="bg-[#d9dfe6] rounded-xl flex items-center px-4 h-[48px]">
-              <ImBooks className="text-2xl" />
-              <h2 className="text-lg sm:text-2xl sm:px-2 font-bold font-roboto text-gray-800 px-4">Special Offers</h2>
+            <div className="lg:w-[25%] w-full bg-white mt-10">
+              <div className="bg-[#d9dfe6] rounded-xl flex items-center px-4 h-[48px]">
+                <ImBooks className="text-2xl" />
+                <h2 className="text-lg sm:text-2xl sm:px-2 font-bold font-roboto text-gray-800 px-4">Special Offers</h2>
+              </div>
+              {visibleOffers.map((offer) => (
+                <SpecialOfferCard
+                  key={offer._id}
+                  title={offer.title}
+                  discount={offer.discount}
+                  imageUrl={offer.imageUrl} // Pass the image URL to the component
+                />
+              ))}
+              <LimitedTimeOffer />
             </div>
-            {visibleOffers.map((offer) => (
-              <SpecialOfferCard
-                key={offer._id}
-                title={offer.title}
-                discount={offer.discount}
-                imageUrl={offer.imageUrl} // Pass the image URL to the component
-              />
-            ))}
-            <LimitedTimeOffer />
-          </div>
-
 
             <div className="lg:w-[75%] w-full bg-white mt-10">
               <div className="bg-[#d9dfe6] rounded-xl flex items-center px-4 h-[48px]">
