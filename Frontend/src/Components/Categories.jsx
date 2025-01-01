@@ -5,6 +5,7 @@ import LimitedTimeOffer from "./LimitedTimeOffer";
 import Cat from "./UpperCat";
 import SpecialOfferCard from "./SpecialOfferCard";
 import TrendingItems from "./TrendingItems";
+import PopCategories from "./PopCat";
 
 const Categories = () => {
   const [specialOffers, setSpecialOffers] = useState([]);
@@ -71,7 +72,7 @@ const Categories = () => {
               <LimitedTimeOffer />
             </div>
 
-            <div className="lg:w-[75%] w-full bg-white mt-10">
+            <div className="lg:w-[75%] w-full bg-white mt-10 mr-3">
               <div className="bg-[#d9dfe6] rounded-xl flex items-center px-4 h-[48px]">
                 <ImBooks className="text-2xl" />
                 <h2 className="text-lg sm:text-2xl sm:px-2 font-bold font-roboto text-gray-800 px-4">Trending items</h2>
@@ -79,8 +80,9 @@ const Categories = () => {
               <TrendingItems />
               <div className="bg-[#d9dfe6] rounded-xl flex items-center px-4 h-[48px] mt-20">
                 <ImBooks className="text-2xl" />
-                <h2 className="text-lg sm:text-2xl sm:px-2 font-bold font-roboto text-gray-800 px-4">Popular Categories</h2>
+                <h2 className="text-md sm:text-2xl sm:px-2 font-bold font-roboto text-gray-800 px-4">Popular Categories</h2>
               </div>
+              <PopCategories />
             </div>
           </div>
         </div>
