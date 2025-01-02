@@ -1,55 +1,80 @@
-import Lottie from "react-lottie"; // Import Lottie
-import * as logoAnimation from "../assets/Lottie/landing.json"; // Import your Lottie JSON file
+import React, { useState } from 'react';
+import leftImage from '../../public/Images/Hero1.png'; // Replace with actual image path
+import rightImage from '../../public/Images/Hero2.png'; // Replace with actual image path
 import { FaSearch } from "react-icons/fa";
 
-const Hero = () => {
-  const defaultOptions = {
-    loop: true, // Set to true for continuous animation
-    autoplay: true, // Start animation on load
-    animationData: logoAnimation, // Path to your Lottie JSON file
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice", // Adjusts the aspect ratio
-    },
+// Navbar Component
+function Navbar() {
+  return (
+    <nav className="bg-white w-full py-4 px-6 fixed top-0 left-0 right-0 flex justify-between items-center shadow-md z-50">
+      <img src="/Images/Logo.png" alt="Campus Marketplace Logo" className='h-[70px] ml-10' />
+      <div className="flex space-x-4 text-xl font-roboto mr-36">
+        <button className="shadow-xl text-gray-700 font-medium text-lg py-2 px-4 rounded-3xl w-[130px] h-[52px]">
+          Log in
+        </button>
+        <button className="bg-[#e01d00] hover:bg-[#e01e00] text-white font-medium py-2 px-4 rounded-3xl w-[130px]">
+          Sign up
+        </button>
+      </div>
+    </nav>
+  );
+}
+
+// HeroSection Component
+function HeroSection() {
+  const [campusAddress, setCampusAddress] = useState('');
+
+  const handleAddressChange = (event) => {
+    setCampusAddress(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle search logic here, e.g., fetch deals based on campus address
+    console.log('Campus Address:', campusAddress);
   };
 
   return (
-    <div>
-      {/* Section with two parts: left (text or search bar) and right (Lottie animation) */}
-      <section className="bg-white min-h-screen flex flex-col lg:flex-row justify-between items-center py-10 px-6 lg:px-20">
-        {/* Left side - Text or Search bar */}
-        <div className="flex flex-col justify-start items-start w-full lg:w-1/2 lg:mt-[-65px] font-roboto pt-16 lg:pt-0">
-          <h1 className="text-4xl font-bold text-gray-800">Buy and sell textbooks with ease</h1>
-          <h1 className="text-4xl font-bold text-gray-800">on TradeHive!</h1>
-          <p className="text-lg mt-4 text-gray-700">
-            Browse by course, author, or ISBN number.
-          </p>
+    <section className="bg-white h-screen flex flex-col items-center justify-center mt-[70px]"> {/* Added margin-top to avoid navbar overlap */}
+      <Navbar />
+      <div className="container mx-auto max-w-screen-xl px-4 flex items-center justify-between gap-12">
+        
+        {/* Left Image */}
+        <div className="flex-1 flex justify-center">
+          <img src={leftImage} alt="Left Image" className="w-[192px]  mb-[200px] ml-20" />
+        </div>
 
-          {/* Search bar with Search button */}
-          <div className="mt-8 flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0 w-full lg:w-auto">
-            {/* Search bar */}
-            <div className="flex items-center border-2 border-gray-300 w-full lg:w-[450px] rounded-xl">
+        {/* Text Section */}
+        <div className="flex-1 text-center">
+          <h1 className="text-[72px] w-[791px] h-[175px] font-bold mb-8 ">Discover student deals near you</h1>
+          <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
+            <div className="relative mt-20">
+            <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-black" />
               <input
                 type="text"
-                className="py-3 px-4 outline-none flex-grow rounded-l-xl"
-                placeholder="What are you looking for?"
+                placeholder="Campus address"
+                value={campusAddress}
+                onChange={handleAddressChange}
+                className="w-full px-4 py-3 rounded-3xl border border-gray-200 focus:outline-none focus:border-indigo-500 shadow-xl" 
               />
-              <FaSearch className="hover:text-gray-500 mr-4 text-xl sm:text-2xl lg:text-xl" />
+              
+              <button
+                type="submit"
+                className="absolute bg-[#e01d00] text-white font-bold py-3 px-4 rounded-3xl ml-5 w-[130px] h-[52px]"
+              >
+                Search
+              </button>
             </div>
-
-            {/* Search button */}
-            <button className="py-3 px-6 bg-[#567594] text-white font-semibold rounded-xl hover:bg-[#33485f] transition">
-              Search
-            </button>
-          </div>
+          </form>
         </div>
 
-        {/* Right side - Lottie Animation */}
-        <div className="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
-          <Lottie options={defaultOptions} className="lg:h-[600px] lg:w-[600px] h-[300px] w-[300px]" />
+        {/* Right Image */}
+        <div className="flex-1 flex justify-center">
+          <img src={rightImage} alt="Right Image" className="w-[192px] mr-20 mt-[130px]" />
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-};
+}
 
-export default Hero;
+export default HeroSection;
