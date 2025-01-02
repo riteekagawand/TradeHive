@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 // Navbar Component
 function Navbar() {
   return (
-    <nav className="bg-white w-full py-4 px-6  top-0 left-0 right-0 flex justify-between items-center shadow-md z-50">
+    <nav className="bg-white w-full py-4 px-6 fixed top-0 left-0 right-0 flex justify-between items-center shadow-md z-50">
       <img src="/Images/Logo.png" alt="Campus Marketplace Logo" className='h-[70px] ml-10' />
       <div className="flex space-x-4 text-xl font-roboto mr-36">
         <button className="shadow-xl text-gray-700 font-medium text-lg py-2 px-4 rounded-3xl w-[130px] h-[52px]">
@@ -41,7 +41,11 @@ function HeroSection() {
         
         {/* Left Image */}
         <div className="flex-1 flex justify-center">
-          <img src={leftImage} alt="Left Image" className="w-[192px]  mb-[200px] ml-20" />
+          <img 
+            src={leftImage} 
+            alt="Left Image" 
+            className="w-[192px] mb-[200px] ml-20 animate-slow-bounce" // Using custom slow bounce animation
+          />
         </div>
 
         {/* Text Section */}
@@ -70,7 +74,11 @@ function HeroSection() {
 
         {/* Right Image */}
         <div className="flex-1 flex justify-center">
-          <img src={rightImage} alt="Right Image" className="w-[192px] mr-20 mt-[130px]" />
+          <img 
+            src={rightImage} 
+            alt="Right Image" 
+            className="w-[192px] mr-20 mt-[130px] animate-slow-bounce" // Using custom slow bounce animation
+          />
         </div>
       </div>
     </section>

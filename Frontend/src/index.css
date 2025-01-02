@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes slow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Adjust the height of the bounce */
+  }
+}
+
+.animate-slow-bounce {
+  animation: slow-bounce 3s ease-in-out infinite; /* Adjust the duration for slower bounce */
+}
+
+
 html {
     scroll-behavior: smooth;
   }
