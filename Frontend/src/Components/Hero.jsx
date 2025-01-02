@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 // Navbar Component
 function Navbar() {
   return (
-    <nav className="bg-white w-full py-4 px-6 fixed top-0 left-0 right-0 flex justify-between items-center shadow-md z-50">
+    <nav className="bg-white w-full py-4 px-6  top-0 left-0 right-0 flex justify-between items-center shadow-md z-50">
       <img src="/Images/Logo.png" alt="Campus Marketplace Logo" className='h-[70px] ml-10' />
       <div className="flex space-x-4 text-xl font-roboto mr-36">
         <button className="shadow-xl text-gray-700 font-medium text-lg py-2 px-4 rounded-3xl w-[130px] h-[52px]">

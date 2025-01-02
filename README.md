@@ -14,14 +14,14 @@
 
 
 
-<img src='./Frontend/src/assets/Images/Hero.png' />
+<img src='./Frontend/src/assets/Images/Hero2.0.png' />
 
 
-## Categories Section
+## Explre Feature Section
 
 
 
-<img src='./Frontend/src/assets/Images/category.png' />
+<img src='./Frontend/src/assets/Images/Feature2.0.png' />
 
 ## Prerequisites
 

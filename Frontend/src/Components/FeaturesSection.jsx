@@ -21,7 +21,7 @@ function FeaturesSection() {
           </div>
 
           {/* Divider Line */}
-          <div className="w-[3px] h-[620px] bg-[#d3d3d3] "></div>
+          <div className="w-[3px] h-[550px] bg-[#d3d3d3] "></div>
 
           <div className="flex flex-col items-start text-left w-[300px]">
             <img src={step3Image} alt="Step 2 Illustration" className="w-[280px] mb-6" />
@@ -30,7 +30,7 @@ function FeaturesSection() {
           </div>
 
           {/* Divider Line */}
-          <div className="w-[3px] h-[620px] bg-[#d3d3d3]"></div>
+          <div className="w-[3px] h-[550px] bg-[#d3d3d3]"></div>
 
           <div className="flex flex-col items-start text-left w-[300px]">
             <img src={step3Image} alt="Step 3 Illustration" className="w-[280px] mb-6" />
