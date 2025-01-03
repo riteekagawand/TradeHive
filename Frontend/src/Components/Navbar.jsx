@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
-import { FaUser } from "react-icons/fa6";
-import { ImBooks } from "react-icons/im";
+import { IoMdSearch } from "react-icons/io";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -41,15 +39,16 @@ const Navbar = () => {
     event.stopPropagation();
     setIsOpen((prev) => !prev);
   };
-  
 
   return (
-    <nav className={`bg-gray-200 fixed top-0 left-0 w-full ${isVisible ? "transition-transform transform-none" : "transition-transform transform -translate-y-full"} z-50`}>
-      <div className="flex justify-between items-center p-4">
+    <nav
+      className={`bg-white border border-black flex items-center w-full h-[120px] ${
+        isVisible ? "transition-transform transform-none" : "transition-transform transform -translate-y-full"
+      } z-50`}
+    >
+      <div className="flex justify-center items-center p-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center text-2xl font-bold ml-20">
-          <ImBooks className="size-[40px]" />
-        </Link>
+        <img src="/Images/Logo.png" alt="Logo" className="w-[220px] h-auto ml-[50px]" />
 
         {/* Hamburger Menu Icon for Mobile */}
         <div className="lg:hidden">
@@ -61,34 +60,34 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div
           ref={dropdownRef}
-          className={`lg:flex lg:flex-1 lg:justify-center lg:space-x-8 text-[19px] font-medium font-roboto ${isOpen ? "block" : "hidden"} absolute lg:static top-[60px] left-0 w-full lg:w-auto bg-gray-200 lg:bg-transparent`}
+          className={`lg:flex lg:flex-1 lg:space-x-8 text-[19px] font-medium font-roboto ${
+            isOpen ? "block" : "hidden"
+          } absolute lg:static top-[60px] left-0 w-full lg:w-auto bg-gray-200 lg:bg-transparent`}
         >
-          <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-8">
-            <Link to="/" className="text-gray-900 hover:text-gray-500 px-4 py-2 lg:px-0">
-              HOME
+          <div className="relative flex flex-col lg:flex-row lg:items-center lg:space-x-8 ml-[93px]" style={{ gap: "128px" }}>
+            <Link to="/Buy" className="text-gray-900 text-[24px] font-roboto font-bold hover:text-gray-500 px-4 py-2 lg:px-0">
+              Buy
             </Link>
-            <Link to="/Textbooks" className="text-gray-900 hover:text-gray-500 px-4 py-2 lg:px-0">
-              TEXTBOOKS
+            <Link to="/Sell" className="text-gray-900 text-[24px] font-roboto font-bold hover:text-gray-500 px-4 py-2 lg:px-0">
+              Sell
             </Link>
-            <Link to="/Gadg" className="text-gray-900 hover:text-gray-500 px-4 py-2 lg:px-0">
-              GADG
+            <Link to="/Trade" className="text-gray-900 text-[24px] font-roboto font-bold hover:text-gray-500 px-4 py-2 lg:px-0">
+              Trade
             </Link>
-            <Link to="/Notes" className="text-gray-900 hover:text-gray-500 px-4 py-2 lg:px-0">
-              NOTES
-            </Link>
+
+            {/* Search Bar and Icon */}
+            <div className="flex items-center space-x-2 relative">
+              <input
+                type="text"
+                placeholder="Campus address"
+                value="Search listings"
+                className="w-[400px] h-[48px] font-thin px-4 py-3 rounded-3xl border border-gray-200 text-gray-500 shadow-xl font-roboto text-[20px]"
+              />
+              <IoMdSearch className="text-black h-[40px] w-[40px] mt-2 mr-10" />
+            </div>
           </div>
         </div>
-
-        {/* Icons on the Right Side */}
-        <div className="flex space-x-4 lg:space-x-6 text-[18px] lg:text-[22px] font-semibold mr-20">
-          <FaSearch className="hover:text-gray-500" />
-          <FaShoppingCart className="hover:text-gray-500" />
-          <FaUser className="hover:text-gray-500" />
-        </div>
       </div>
-
-      {/* Line below the navbar with margin */}
-      <div className="ml-20 mr-20 border-t-[3px] border-gray-300 rounded-full"></div>
     </nav>
   );
 };

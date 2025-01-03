@@ -5,7 +5,7 @@ import step3Image from '../../public/Images/Explore1.png';
 function FeaturesSection() {
   return (
     <section className="bg-white">
-      <div className="container mx-auto px- w-[1252px]">
+      <div className="container mx-auto  w-[1252px]">
         {/* Border line */}
         <div className="w-[1252px] h-[3px] bg-[#d3d3d3] mx-auto mb-8"></div>
         <div className="flex justify-center items-center">
@@ -38,7 +38,7 @@ function FeaturesSection() {
             <p className='text-[20px] font-roboto'>Complete your purchase securely. Sit back and relax while we process your order.</p>
           </div>
         </div>
-        <div className="w-[1252px] h-[3px] bg-[#d3d3d3] mx-auto mb-[80px]"></div>
+        <div className="w-[1252px] h-[3px] bg-[#d3d3d3] mx-auto mb-8"></div>
       </div>
     </section>
   );

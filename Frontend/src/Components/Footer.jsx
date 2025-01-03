@@ -9,25 +9,24 @@ const Footer = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className='ml-[90px]'>
           <a href="/" className="flex items-center">
-            <ImBooks className='text-2xl' />
-            <span className="ml-3 text-lg font-semibold">Campus Market</span>
+            <img src="/Images/Logo.png" alt="Logo" className="w-[220px] h-auto" />
           </a>
-          <p className="mt-2 text-[13px]">Quick and secure transactions</p>
+          <p className="mt-[8px] text-[14px] font-roboto">Quick and secure transactions</p>
         </div>
         {/* Right-align the 'Need Help?' section */}
         <div className="ml-auto mr-[70px]">
-          <h4 className="text-[13px] mb-2">Need Help?</h4>
-          <p className='text-[15px]'>Our support is here for you 24/7</p>
-          <p className="mt-2 flex items-center">
-            <FaPhoneAlt className="mr-2" />
-            <a href="tel:(123)456-7890" className="hover:underline">
+          <h4 className="text-[12px] mb-[4px] font-roboto">Need Help?</h4>
+          <p className='text-[16px] font-roboto'>Our support is here for you 24/7</p>
+          <p className="mt-[28px] flex items-center">
+            <FaPhoneAlt className="mr-2 w-[24px] h-[24px]" />
+            <a href="tel:(123)456-7890" className="hover:underline text-[20px] font-roboto">
               (123) 456-7890
             </a>
           </p>
-          <p className="mt-2 flex items-center">
-            <CgMail className="mr-2" />
-            <a href="mailto:support@campusmarket.com" className="hover:underline">
-              support@campusmarket.com
+          <p className="mt-[8px] flex items-center">
+            <CgMail className="mr-2 w-[24px] h-[24px]" />
+            <a href="mailto:support@TradeHive.com" className="hover:underline text-[20px] font-roboto">
+              support@TradeHive.com
             </a>
           </p>
         </div>
